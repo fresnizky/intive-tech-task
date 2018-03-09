@@ -114,15 +114,19 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Ejercicio Intive</h1>
-        <h2>Federico Martin Resnizky</h2>
-        <div>
-          <ContactForm data={this.state.formData} inputChange={this.handleInputChange} updateGreeting={this.handleSubmit} />
-          <Greeting greeting={this.state.greeting} />
+      <div className="container-fluid">
+        <div className="row">
+          <h1 className="text-center">Ejercicio Intive</h1>
+          <h2 className="text-center">Federico Martin Resnizky</h2>
         </div>
-        <div>
-          <VisitorList visitors={this.state.visitors} getGreeting={this.getGreeting} />
+        <div className="row">
+          <div className="col-md-6">
+            <ContactForm data={this.state.formData} inputChange={this.handleInputChange} updateGreeting={this.handleSubmit} />
+            <Greeting greeting={this.state.greeting} />
+          </div>
+          <div className="col-md-6">
+            <VisitorList visitors={this.state.visitors} getGreeting={this.getGreeting} />
+          </div>
         </div>
       </div>
     );

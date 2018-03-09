@@ -15,41 +15,54 @@ class ContactForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.props.updateGreeting}>
+            <form onSubmit={this.props.updateGreeting} className="form-horizontal">
                 <div className="form-group">
-                    <label>Nombre:
+                    <label className="col-sm-2 control-label">Nombre:</label>
+                    <div class="col-sm-10">
                         <input
                             type="text"
                             name="nombre" 
                             value={this.props.data.nombre}
-                            onChange={this.props.inputChange} />
-                    </label>
+                            onChange={this.props.inputChange}
+                            className="form-control" />
+                    </div>
                 </div>
 
                 <div className="form-group">
-                    <label>Pais:
-                        <select name="pais" size="3" value={this.props.data.pais} onChange={this.props.inputChange}>
-                            <option>Selecciona Pais</option>
-                            {this.state.countries.map(country =>
-                                <option key={country.alpha2Code} value={country.alpha2Code + '|' + country.name}>
-                                    {country.name}
-                                </option>
-                            )}
+                    <label className="col-sm-2 control-label">Pais:</label>
+                    <div className="col-sm-10">
+                        <select 
+                            name="pais" 
+                            size="3" 
+                            value={this.props.data.pais} 
+                            onChange={this.props.inputChange}>
+                            className="form-control"
+                                <option>Selecciona Pais</option>
+                                {this.state.countries.map(country =>
+                                    <option key={country.alpha2Code} value={country.alpha2Code + '|' + country.name}>
+                                        {country.name}
+                                    </option>
+                                )}
                         </select>
-                    </label>
+                    </div>
                 </div>
 
                 <div className="form-group">
-                    <label>Cumpleaños
+                    <label className="col-sm-2 control-label">Cumpleaños</label>
+                    <div className="col-sm-10">
                         <input
                             type="text"
                             name="fecha"
                             value={this.props.data.fecha}
-                            onChange={this.props.inputChange} />
-                    </label>
+                            onChange={this.props.inputChange} 
+                            className="form-control"/>
+                        </div>
                 </div>
                 <div className="form-group">
-                    <button className="btn btn-primary">Saludar</button>
+                    <div className="col-sm-2"></div>
+                    <div className="col-sm-10">
+                        <button className="btn btn-primary">Saludar</button>
+                    </div>
                 </div>
             </form>
         )
