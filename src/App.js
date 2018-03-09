@@ -35,7 +35,7 @@ class App extends Component {
       }
     ],
     formData: {
-      nombre: 'asdasdsa',
+      nombre: '',
       pais: '',
       fecha: '',
     },
@@ -121,8 +121,14 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-md-6">
-            <ContactForm data={this.state.formData} inputChange={this.handleInputChange} updateGreeting={this.handleSubmit} />
-            <Greeting greeting={this.state.greeting} />
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <ContactForm data={this.state.formData} inputChange={this.handleInputChange} updateGreeting={this.handleSubmit} />
+              </div>
+              <div class="panel-footer">
+                <Greeting greeting={this.state.greeting} />              
+              </div>
+            </div>
           </div>
           <div className="col-md-6">
             <VisitorList visitors={this.state.visitors} getGreeting={this.getGreeting} />
